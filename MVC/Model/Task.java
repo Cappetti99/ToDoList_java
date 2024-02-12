@@ -1,6 +1,5 @@
 package MVC.Model;
 
-import java.sql.Date;
 
 public class Task {
 

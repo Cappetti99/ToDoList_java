@@ -19,10 +19,12 @@ private ArrayList<Task> tasksList = new ArrayList<Task>();
     }
 
     //Subject methods
+    @Override
     public void registerObserver(Observer o) {
         observers.add(o);
     }
 
+    @Override
     public void removeObserver(Observer o) {
         int i = observers.indexOf(o);
         if (i >= 0) {
@@ -30,6 +32,7 @@ private ArrayList<Task> tasksList = new ArrayList<Task>();
         }
     }
 
+    @Override
     public void notifyObservers() {
         for (int i = 0; i < observers.size(); i++) {
             Observer observer = (Observer) observers.get(i);
@@ -37,6 +40,7 @@ private ArrayList<Task> tasksList = new ArrayList<Task>();
         }
     }
 
+    @Override
     public void removeTask(int index) {
         tasksList.remove(index);
         System.out.println("Task removed");
@@ -47,16 +51,25 @@ private ArrayList<Task> tasksList = new ArrayList<Task>();
     @Override
     public void addTask(String taskName, String priority, boolean isComplete) {
         Task task = new Task(taskName, priority, isComplete);
-        //Task task = new Task(taskName, date, priority, completed);
         tasksList.add(task);
         System.out.println("Task added");
         notifyObservers();
     }
 
     @Override
-    public void editTask(int index, String name, Date date, String priority) {
-        // TODO Auto-generated method stub
-        System.out.println("edit");
+    public void editTask(int index, String name, String priority) {
+        tasksList.get(index).setTaskName(name);
+        tasksList.get(index).setPriority(priority);
+        notifyObservers();
+    }
+
+    public void markTaskAsComplete(int index) {
+        if(tasksList.get(index).getIsComplete() == true){
+            tasksList.get(index).setIsComplete(false);
+        } else if(tasksList.get(index).getIsComplete() == false){
+            tasksList.get(index).setIsComplete(true);
+        }
+        notifyObservers();
     }
 
     public ArrayList<Task> getTasksList() {

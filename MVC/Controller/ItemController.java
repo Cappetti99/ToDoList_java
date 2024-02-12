@@ -14,13 +14,13 @@ public class ItemController implements Controller{
     
     @Override
     public void addTask(String task, String priority) {
-        System.out.println("before addTask in ItemController");
         boolean isComplete = false;   
         taskList.addTask(task, priority, isComplete);
     }
 
     @Override
-    public void editTask(int index, String name, Date date, String priority){
+    public void editTask(int index, String name, String priority){
+        taskList.editTask(index, name,   priority);
         System.out.println("edit");
     }
 
@@ -28,6 +28,10 @@ public class ItemController implements Controller{
     public void removeTask(int index){
         taskList.removeTask(index);
         System.out.println("remove");
+    }
+
+    public void markTaskAsComplete(int index){
+        taskList.markTaskAsComplete(index);
     }
 
 }

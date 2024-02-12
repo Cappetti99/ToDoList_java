@@ -1,9 +1,6 @@
 package MVC.View;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,6 +47,10 @@ public static void main(String[] args) {
     public void Choice(int option){
         String taskName;
         String priority;
+        if(option < 1 || option > 6){
+            System.out.println("Invalid option");
+            return;
+        }
 
         switch(option){
             case 1:
@@ -80,7 +81,7 @@ public static void main(String[] args) {
                 taskName = scanner.nextLine();
                 System.out.println("Enter the new priority: ");
                 priority = scanner.nextLine();
-                //itemController.editTask(index -1, taskName, priority);
+                itemController.editTask(index -1, taskName, priority); //todo finire di guardare
                 break;
             }
         
@@ -89,7 +90,7 @@ public static void main(String[] args) {
                 System.out.println("Select the task to mark as complete: ");
                 Scanner scanner = new Scanner(System.in);
                 int index = scanner.nextInt();
-                //itemController.markTaskAsComplete(index -1);
+                itemController.markTaskAsComplete(index -1);
                 break;
             }
             case 5:
@@ -100,6 +101,7 @@ public static void main(String[] args) {
             case 6:
                 System.exit(0);
                 break;
+
             default:
                 System.out.println("Invalid option");
                 break;
@@ -111,10 +113,15 @@ public static void main(String[] args) {
         
         String RESET = "\u001B[0m";
         String RED = "\u001B[31m";
+        String GREEN = "\u001B[32m";
         System.out.println(RED + "Tasks: " + RESET);
         tasks = taskList.getTasksList();
         for(int i = 0; i < tasks.size(); i++) {
-            System.out.println(RED + i + ". " + tasks.get(i).getTaskName() + " " + tasks.get(i).getPriority() + " " + tasks.get(i).getIsComplete() + RESET);
+            if(tasks.get(i).getIsComplete() == true){
+                System.out.println(GREEN + (i+1) + ". " + tasks.get(i).getTaskName() + " " + tasks.get(i).getPriority() + " " + tasks.get(i).getIsComplete() + RESET);
+            } else {
+                System.out.println(RED + (i+1) + ". " + tasks.get(i).getTaskName() + " " + tasks.get(i).getPriority() + " " + tasks.get(i).getIsComplete() + RESET);
+            }
         }
     }
 
