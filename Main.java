@@ -11,7 +11,7 @@ public class Main {
         TaskList taskList = new TaskList(); //model
         ItemController itemController = new ItemController(taskList); //controller
         Frame frame = new Frame(itemController, taskList); //view
-        frame.show();
+        frame.main(args);
     }
 
     public void run() {
