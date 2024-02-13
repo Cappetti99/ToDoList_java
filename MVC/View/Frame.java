@@ -78,9 +78,10 @@ public static void main(String[] args) {
                 Scanner scanner = new Scanner(System.in);
                 int index = scanner.nextInt();
                 System.out.println("Enter the new task name: ");
-                taskName = scanner.nextLine();
+                Scanner scanner2 = new Scanner(System.in);
+                taskName = scanner2.nextLine();
                 System.out.println("Enter the new priority: ");
-                priority = scanner.nextLine();
+                priority = scanner2.nextLine();
                 itemController.editTask(index -1, taskName, priority); //todo finire di guardare
                 break;
             }
