@@ -1,44 +1,12 @@
-public static void createList() {
-        System.out.println("ToDoList Creator - Create to do lists using Java.");
-        //System.out.println("Type '!view' to exit and view your list.");
-        System.out.println("Type '!add' to add a task");
-        System.out.println("Type '!edit' to edit a task");
-        System.out.println("Type '!rem' to remove a task");
-        
-        System.out.println("Enter your tasks in the line below.");
-        while (true) {
-            System.out.print("-: ");
-            String definedCommand = userInput.nextLine();
-            SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy/MM/dd");
-            Calendar currentDate = Calendar.getInstance();
-            if (definedCommand.equals("!view")) { //da togliere
-                System.out.println("List's Date: " + simpleDate.format(currentDate.getTime()));
-                for (int listSize = 0; listSize != userList.size(); listSize++) { 
-                    System.out.println(listSize + 1 + ". " + userList.get(listSize));
-                }
-                break;
-            }else if(definedCommand.equals("!add")){
-                System.out.println("Enter the task title you want to add.");
-                String task = userInput.nextLine();
-                System.out.println(task);
-                //System.out.println("Insert date of the task. (yyyy-mm-dd)");
-                //String date = userInput.nextLine();
-                //System.out.println(date);
-                System.out.println("Insert Priority of the task. (h/m/l)");
-                String priority = userInput.nextLine();
-                System.out.println(priority);
-                System.out.println("add");
-                itemController.addTask(task, priority); //risolto il problema
-                userList.add(task);
-            } else if(definedCommand.equals("!edit")){
-                System.out.println("edit");
-                //itemController.editTask();
-            } else if(definedCommand.equals("!rem")){
-                System.out.println("Enter the task number you want to remove.");
-                int index = userInput.nextInt();
-                itemController.removeTask(index - 1);
-            }else {
-                userList.add(definedCommand);
-            }
-        }
-    
+[] aggiungere la data
+[] riscrivere UML
+[] cominciare la relazione
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]

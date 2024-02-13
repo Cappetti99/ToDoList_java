@@ -58,7 +58,7 @@ public static void main(String[] args) {
                 System.out.println("Enter the task name: ");
                 Scanner scanner = new Scanner(System.in);
                 taskName = scanner.nextLine();
-                System.out.println("Enter the priority: ");
+                System.out.println("Enter the priority (Higt, Medium, Low): ");
                 priority = scanner.nextLine();
                 itemController.addTask(taskName, priority);
                 break;
@@ -80,7 +80,7 @@ public static void main(String[] args) {
                 System.out.println("Enter the new task name: ");
                 Scanner scanner2 = new Scanner(System.in);
                 taskName = scanner2.nextLine();
-                System.out.println("Enter the new priority: ");
+                System.out.println("Enter the new priority (Higt, Medium, Low): ");
                 priority = scanner2.nextLine();
                 itemController.editTask(index -1, taskName, priority); //todo finire di guardare
                 break;

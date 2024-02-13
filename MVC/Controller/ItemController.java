@@ -20,7 +20,7 @@ public class ItemController implements Controller{
 
     @Override
     public void editTask(int index, String name, String priority){
-        taskList.editTask(index, name,   priority);
+        taskList.editTask(index, name, priority);
         System.out.println("edit");
     }
 
