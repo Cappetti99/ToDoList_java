@@ -1,5 +1,6 @@
 import MVC.Controller.ItemController;
-import MVC.Model.TaskList;
+import MVC.Model.TaskManager;
+import MVC.Model.TaskManager;
 import MVC.View.Frame;
 
 /**
@@ -8,10 +9,9 @@ import MVC.View.Frame;
 public class Main {
 
     public static void main(String[] args) {
-        TaskList taskList = new TaskList(); //model
+        TaskManager taskList = new TaskManager(); //model
         ItemController itemController = new ItemController(taskList); //controller
         Frame frame = new Frame(itemController, taskList); //view
-        frame.main(args);
     }
 
     public void run() {

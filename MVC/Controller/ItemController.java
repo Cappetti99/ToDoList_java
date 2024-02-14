@@ -1,37 +1,33 @@
 package MVC.Controller;
 
-import java.sql.Date;
-
-import MVC.Model.TaskList;
+import MVC.Model.TaskManager;
 
 public class ItemController implements Controller{
 
-    TaskList taskList = new TaskList();
+    TaskManager taskManager = new TaskManager();
 
-    public ItemController(TaskList taskList) {
-        this.taskList = taskList;
+    public ItemController(TaskManager taskManager) {
+        this.taskManager = taskManager;
     }
     
     @Override
     public void addTask(String task, String priority) {
         boolean isComplete = false;   
-        taskList.addTask(task, priority, isComplete);
+        taskManager.addTask(task, priority, isComplete);
     }
 
     @Override
     public void editTask(int index, String name, String priority){
-        taskList.editTask(index, name, priority);
-        System.out.println("edit");
+        taskManager.editTask(index, name, priority);
     }
 
     @Override
     public void removeTask(int index){
-        taskList.removeTask(index);
-        System.out.println("remove");
+        taskManager.removeTask(index);
     }
 
     public void markTaskAsComplete(int index){
-        taskList.markTaskAsComplete(index);
+        taskManager.markTaskAsComplete(index);
     }
 
 }

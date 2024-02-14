@@ -1,20 +1,19 @@
 package MVC.Model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import Observer.Subject;
 import Observer.Observer;
+import Singleton.TaskList;
 
-public class TaskList implements Model , Subject {
+public class TaskManager implements Model , Subject {
 
 public List<Observer> observers;
     
-private ArrayList<Task> tasksList = new ArrayList<Task>();
+private TaskList tasksList = TaskList.getInstance();
 
-
-    public TaskList() {
+    public TaskManager() {
         observers = new ArrayList<Observer>();
     }
 
@@ -70,8 +69,5 @@ private ArrayList<Task> tasksList = new ArrayList<Task>();
         notifyObservers();
     }
 
-    public ArrayList<Task> getTasksList() {
-        return tasksList;
-    }
 
 }

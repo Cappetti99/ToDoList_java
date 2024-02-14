@@ -1,7 +1,5 @@
 package MVC.Controller;
 
-import java.sql.Date;
-
 public interface Controller {
     
 public abstract void addTask(String title, String priority);
