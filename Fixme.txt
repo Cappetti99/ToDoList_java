@@ -1,5 +1,5 @@
 [] aggiungere la data
-[] riscrivere UML
+[] riscrivere UML, con le varie cartelle
 [] cominciare la relazione
 []
 []

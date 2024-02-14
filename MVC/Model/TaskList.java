@@ -43,7 +43,6 @@ private ArrayList<Task> tasksList = new ArrayList<Task>();
     @Override
     public void removeTask(int index) {
         tasksList.remove(index);
-        System.out.println("Task removed");
         notifyObservers();
     }
 
@@ -52,7 +51,6 @@ private ArrayList<Task> tasksList = new ArrayList<Task>();
     public void addTask(String taskName, String priority, boolean isComplete) {
         Task task = new Task(taskName, priority, isComplete);
         tasksList.add(task);
-        System.out.println("Task added");
         notifyObservers();
     }
 

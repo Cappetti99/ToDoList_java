@@ -19,12 +19,12 @@ public class Frame extends View {
         taskList.registerObserver(this);
     }
 
-public static void main(String[] args) {
+    public static void main(String[] args) {
         TaskList taskList = new TaskList(); //model
         ItemController itemController = new ItemController(taskList); //controller
         Frame frame = new Frame(itemController, taskList); //view
         frame.show("");
-}
+    }
 
     @Override
     public void show(String input) {
@@ -47,10 +47,6 @@ public static void main(String[] args) {
     public void Choice(int option){
         String taskName;
         String priority;
-        if(option < 1 || option > 6){
-            System.out.println("Invalid option");
-            return;
-        }
 
         switch(option){
             case 1:
