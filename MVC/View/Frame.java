@@ -15,11 +15,14 @@ public class Frame extends View {
     private ItemController itemController;
     private TaskManager taskManager;
     private TaskList tasks = TaskList.getInstance();
+    private LetturaFileTask letturaFileTask;
+
 
     public Frame(ItemController itemController, TaskManager taskManager) {
         this.itemController = itemController;
         this.taskManager = taskManager;
         taskManager.registerObserver(this);
+        letturaFileTask = new LetturaFileTask(taskManager);
     }
 
     public static void main(String[] args) {
@@ -65,7 +68,12 @@ public class Frame extends View {
             case 6:
             {   option6();
                 break;  }
-
+            case 7:
+            {   option7();
+                break;  }
+            case 8:
+            {   option8();
+                break;  }
             default:
             {    System.out.println("Invalid option");
                 break;  }
@@ -101,10 +109,13 @@ public class Frame extends View {
         System.out.println("3. Edit a task");
         System.out.println("4. Mark a task as complete/incomplete");
         System.out.println("5. Show all tasks");
-        System.out.println("6. Exit");    
+        System.out.println("6. Load tasks from file");
+        System.out.println("7. Save tasks to file");
+        System.out.println("8. Exit");
+        
     }
 
-    public void option1(){
+    public void option1(){ //add task
         String taskName;
         String priority;
         System.out.println("Enter the task name: ");
@@ -119,16 +130,24 @@ public class Frame extends View {
 
     }
 
-    public void option2(){
+    public void option2(){ //remove task
+        if(tasks.getTasksList().size() == 0){
+            System.out.println(RED + "No tasks to remove" + RESET);
+            return;
+        }
         System.out.println("Select the task to remove: ");
         Scanner scanner = new Scanner(System.in);
         int index = scanner.nextInt();
         itemController.removeTask(index -1);
     }
 
-    public void option3(){
+    public void option3(){ //edit task
         String taskName;
         String priority;
+        if(tasks.getTasksList().size() == 0){
+            System.out.println(RED + "No tasks to edit" + RESET);
+            return;
+        }
         System.out.println("Select the task to edit: ");
         Scanner scanner = new Scanner(System.in);
         int index = scanner.nextInt();
@@ -143,18 +162,34 @@ public class Frame extends View {
         itemController.editTask(index -1, taskName, priority);
     }
 
-    public void option4(){
+    public void option4(){ //mark task as complete
+        if(tasks.getTasksList().size() == 0){
+            System.out.println(RED + "No tasks to mark as complete" + RESET);
+            return;
+        }
         System.out.println("Select the task to mark as complete: ");
         Scanner scanner = new Scanner(System.in);
         int index = scanner.nextInt();
         itemController.markTaskAsComplete(index -1);
     }
 
-    public void option5(){
-        update();
+    public void option5(){ //show all tasks
+        if(tasks.getTasksList().size() == 0)
+            System.out.println(RED + "No tasks to show" + RESET);
+        else
+            update();
     }
 
-    public void option6(){
+    public void option6(){ //load tasks from file
+        letturaFileTask.loadTasksFromFile();
+    }
+
+    public void option7(){ //save tasks to file
+        letturaFileTask.writeTasksToFile();
+    }
+
+    public void option8(){ //exit
         System.exit(0);
     }
+
 }

@@ -1,0 +1,3 @@
+Task1,, high,, true
+cercare,, low,, false
+pulire,, medium,, false

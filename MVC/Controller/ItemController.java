@@ -1,10 +1,13 @@
 package MVC.Controller;
 
 import MVC.Model.TaskManager;
+import Singleton.TaskList;
+
 
 public class ItemController implements Controller{
 
     TaskManager taskManager = new TaskManager();
+    TaskList tasks = TaskList.getInstance();
 
     public ItemController(TaskManager taskManager) {
         this.taskManager = taskManager;
@@ -28,6 +31,10 @@ public class ItemController implements Controller{
 
     public void markTaskAsComplete(int index){
         taskManager.markTaskAsComplete(index);
+    }
+
+    public void load(String task, String priority, boolean isComplete){
+        taskManager.addTask(task, priority, isComplete);
     }
 
 }
