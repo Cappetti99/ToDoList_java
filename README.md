@@ -20,5 +20,6 @@ This repository contains the source code for a simple Todo List application writ
 
 # UML
 
-![SWE](https://github.com/Cappetti99/ToDoList_java/assets/56259803/ae16c352-e152-41b2-80fe-8d5d48b30de4)
+![SWE](https://github.com/Cappetti99/ToDoList_java/assets/56259803/650140f3-45b1-4eb4-8203-5ea8deb8146a)
+
 
