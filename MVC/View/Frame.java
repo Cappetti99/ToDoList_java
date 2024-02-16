@@ -39,11 +39,25 @@ public class Frame extends View {
         System.out.println("Welcome to the To-Do List App!");
         Scanner scanner = new Scanner(System.in);
 
+        firstOpen();
+
+
+
         while (true) {
             printOption();
             int option = scanner.nextInt();
             Choice(option);
         }
+    }
+
+    public void firstOpen(){
+        System.out.println("Do you want to load tasks from file? (yes/no)");
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.nextLine();
+        if(answer.equals("yes")){
+            load();
+        } else 
+            return;
     }
 
     public void Choice(int option){
@@ -66,13 +80,10 @@ public class Frame extends View {
             {   option5();
                 break;  }
             case 6:
-            {   option6();
+            {   save();
                 break;  }
             case 7:
             {   option7();
-                break;  }
-            case 8:
-            {   option8();
                 break;  }
             default:
             {    System.out.println("Invalid option");
@@ -109,9 +120,8 @@ public class Frame extends View {
         System.out.println("3. Edit a task");
         System.out.println("4. Mark a task as complete/incomplete");
         System.out.println("5. Show all tasks");
-        System.out.println("6. Load tasks from file");
-        System.out.println("7. Save tasks to file");
-        System.out.println("8. Exit");
+        System.out.println("6. Save tasks to file");
+        System.out.println("7. Exit");
         
     }
 
@@ -180,15 +190,21 @@ public class Frame extends View {
             update();
     }
 
-    public void option6(){ //load tasks from file
+    public void load(){ //load tasks from file
         letturaFileTask.loadTasksFromFile();
     }
 
-    public void option7(){ //save tasks to file
+    public void save(){ //save tasks to file
         letturaFileTask.writeTasksToFile();
     }
 
-    public void option8(){ //exit
+    public void option7(){ //exit
+        System.out.println("Do you want to save tasks to file? (yes/no)");
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.nextLine();
+        if(answer.equals("yes")){
+            save();
+        }
         System.exit(0);
     }
 

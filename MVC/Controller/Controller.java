@@ -1,6 +1,6 @@
 package MVC.Controller;
 
-public interface Controller {
+public abstract class Controller {
     
 public abstract void addTask(String title, String priority);
 

@@ -4,7 +4,7 @@ import MVC.Model.TaskManager;
 import Singleton.TaskList;
 
 
-public class ItemController implements Controller{
+public class ItemController extends Controller{
 
     TaskManager taskManager = new TaskManager();
     TaskList tasks = TaskList.getInstance();
