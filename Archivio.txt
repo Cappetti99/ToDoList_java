@@ -1,3 +1,3 @@
 Task1 high true
 Task2 medium false
-cercare low false
+Spesa medium false

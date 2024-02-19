@@ -1,6 +1,8 @@
 package MVC.Model;
 
-public interface Model {
+import Observer.Subject;
+
+public abstract class Model implements Subject {
 
     public abstract void addTask(String title, String priority, boolean completed);
 

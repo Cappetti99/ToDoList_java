@@ -1,6 +1,5 @@
 import MVC.Controller.ItemController;
 import MVC.Model.TaskManager;
-import MVC.Model.TaskManager;
 import MVC.View.Frame;
 
 /**

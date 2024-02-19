@@ -3,11 +3,10 @@ package MVC.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import Observer.Subject;
 import Observer.Observer;
 import Singleton.TaskList;
 
-public class TaskManager implements Model , Subject {
+public class TaskManager extends Model{
 
 public List<Observer> observers;
     
