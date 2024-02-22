@@ -19,7 +19,7 @@ This repository contains the source code for a simple Todo List application writ
 - Use the provided commands to add tasks, mark tasks as completed, view the todo list, and exit the application.
 
 # UML
+![SWE](https://github.com/Cappetti99/ToDoList_java/assets/56259803/019dac7a-9ed4-44c6-82d1-2a17b8e1f92f)
 
-![SWE](https://github.com/Cappetti99/ToDoList_java/assets/56259803/650140f3-45b1-4eb4-8203-5ea8deb8146a)
 
 
