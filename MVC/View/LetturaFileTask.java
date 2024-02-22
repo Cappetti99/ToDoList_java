@@ -19,23 +19,21 @@ public class LetturaFileTask {
     }
 
     public void loadTasksFromFile() {
-        String percorsoFile = "Archivio.txt"; // Sostituisci con il percorso effettivo del tuo file
+        String percorsoFile = "Archivio.txt"; 
 
         try (BufferedReader reader = new BufferedReader(new FileReader(percorsoFile))) {
             String linea;
             while ((linea = reader.readLine()) != null) {
-                // Utilizza StringTokenizer per dividere la riga in base agli spazi o tabulazioni
                 StringTokenizer tokenizer = new StringTokenizer(linea);
 
-                // Estrai i dati dalle colonne
                 if (tokenizer.countTokens() >= 3) {
                     String task = tokenizer.nextToken();
                     String priority = tokenizer.nextToken();
                     String completed = tokenizer.nextToken();
                     boolean mood;
                     if(completed.equals("true")){
-                        mood = true;}
-                    else{
+                        mood = true;
+                    }else{
                         mood = false;
                     }
                     itemController.load(task, priority, mood);
@@ -47,7 +45,7 @@ public class LetturaFileTask {
     }
 
     public void writeTasksToFile(){
-        String percorsoFile = "Archivio.txt"; // Sostituisci con il percorso effettivo del tuo file
+        String percorsoFile = "Archivio.txt"; 
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(percorsoFile))) {
             for (int i = 0; i < TaskList.getInstance().size(); i++) {

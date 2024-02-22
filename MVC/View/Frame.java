@@ -25,13 +25,6 @@ public class Frame extends View {
         letturaFileTask = new LetturaFileTask(taskManager);
     }
 
-    public static void main(String[] args) {
-        TaskManager taskManager = new TaskManager(); //model
-        ItemController itemController = new ItemController(taskManager); //controller
-        Frame frame = new Frame(itemController, taskManager); //view
-        frame.show("");
-    }
-
     @Override
     public void show(String input) {
 
@@ -40,8 +33,6 @@ public class Frame extends View {
         Scanner scanner = new Scanner(System.in);
 
         firstOpen();
-
-
 
         while (true) {
             printOption();

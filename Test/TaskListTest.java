@@ -29,7 +29,7 @@ public class TaskListTest {
         assertEquals(1, TaskList.getInstance().getTasksList().size());
         assertEquals("Test Task", TaskList.getInstance().getTasksList().get(0).getTaskName());
         assertEquals("High", TaskList.getInstance().getTasksList().get(0).getPriority());
-        assertFalse(TaskList.getInstance().getTasksList().get(0).IsComplete());
+        assertFalse(TaskList.getInstance().getTasksList().get(0).getIsComplete());
         TaskList.getInstance().getTasksList().clear();
     }
 
@@ -41,7 +41,7 @@ public class TaskListTest {
         assertEquals(1, TaskList.getInstance().getTasksList().size());
         assertEquals("Test Task 2", TaskList.getInstance().getTasksList().get(0).getTaskName());
         assertEquals("Low", TaskList.getInstance().getTasksList().get(0).getPriority());    
-        assertFalse(TaskList.getInstance().getTasksList().get(0).IsComplete());
+        assertFalse(TaskList.getInstance().getTasksList().get(0).getIsComplete());
         TaskList.getInstance().getTasksList().clear();
         
     }
@@ -61,7 +61,7 @@ public class TaskListTest {
     public void testMarkTaskAsComplete() {
         taskManager.addTask("Test Task", "Medium", false);
         taskManager.markTaskAsComplete(0);
-        assertTrue(TaskList.getInstance().getTasksList().get(0).IsComplete());
+        assertTrue(TaskList.getInstance().getTasksList().get(0).getIsComplete());
         TaskList.getInstance().getTasksList().clear();
 
     }
@@ -70,7 +70,7 @@ public class TaskListTest {
     public void testMarkTaskAsIncomplete() {
         taskManager.addTask("Test Task", "Medium", true);
         taskManager.markTaskAsComplete(0);
-        assertFalse(TaskList.getInstance().getTasksList().get(0).IsComplete());
+        assertFalse(TaskList.getInstance().getTasksList().get(0).getIsComplete());
         TaskList.getInstance().getTasksList().clear();
     }
     
