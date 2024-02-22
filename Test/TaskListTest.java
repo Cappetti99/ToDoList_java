@@ -48,7 +48,7 @@ public class TaskListTest {
 
     @Test
     public void testEditTask() {
-        taskManager.addTask("Test Task", "Low", false);
+        taskManager.addTask("Test Task", "High", false);
         taskManager.editTask(0, "Edited Task", "Low");
         assertEquals(1, TaskList.getInstance().getTasksList().size());
         assertEquals("Edited Task", TaskList.getInstance().getTasksList().get(0).getTaskName());
